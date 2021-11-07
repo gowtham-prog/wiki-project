@@ -55,7 +55,7 @@ def newpage(request):
                 return render(request,"encyclopedia/newentry.html",{
                     "form":form,
                     "existing": True,
-                    "entry":title
+                    "entrytitle":title
                 })
         else:
             return render(request,"encyclopedia/newentry.html",{
@@ -78,7 +78,7 @@ def edit(request,entry):
         form.fields["title"].initial=entry
         form.fields["title"].widget=forms.HiddenInput()
         form.fields["newentry"].initial=entrypage
-        
+        form.fields["edit"].initial=True
         return render(request,"encyclopedia/newentry.html",{
             "form":form,
             "edit":form.fields["edit"],

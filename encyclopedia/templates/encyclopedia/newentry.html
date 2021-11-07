@@ -6,8 +6,8 @@
 {% block body%}
 {% if existing %} 
   <h3>page already exists</h3>
-  If you want to edit the page. <a href = "wiki/{{title}}">Click here</a>
-  you can change entry name down here
+  If you want to edit the page. <a href = "wiki/{{entrytitle}}/edit">Click here</a>
+
 {%endif%}
 <br>
 <form action = "{%url 'newpage'%}" method ="POST">
